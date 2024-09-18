@@ -1,0 +1,15 @@
+<h1>Documents#index</h1>
+<p>Find meee in app/views/documents/index.html.erb</p>
+<!-- <a href="document_path(d)%>"> -->
+<!--   d.title %> -->
+<!-- </a> -->
+
+<ul>
+  <% @documents.each do |d| %>
+    <li>
+      <%= link_to d.title, d %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create Document", new_document_path %>
