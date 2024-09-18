@@ -11,18 +11,22 @@ class DocumentsController < ApplicationController
     @document = Document.new
   end
 
+  # def create
+  #   @document = Document.new(document_params)
+  #   if @document.save
+  #     # redirect_to @document
+  #     redirect_to root_path
+  #   else
+  #     render :new, status: :unprocessable_entity
+  #   end
+  # end
   def create
-    # @document = Document.new(title: "todo", summary: "todo....")
-    @document = Document.new(document_params)
-    if @document.save
-      redirect_to @document
-    else
-      render :new, status: :unprocessable_entity
-    end
+    d = Document.create!(document_params)
+    redirect_to root_path
   end
 
   private
    def document_params
-     params.require(:document).permit(:title, :summary)
+     params.require(:document).permit(:title, :summary, :digital)
    end
 end

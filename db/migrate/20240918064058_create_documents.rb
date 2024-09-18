@@ -3,6 +3,7 @@ class CreateDocuments < ActiveRecord::Migration[7.2]
     create_table :documents do |t|
       t.string :title
       t.text :summary
+      # t.attachment :digital
 
       t.timestamps
     end
