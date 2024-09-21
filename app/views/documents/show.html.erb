@@ -2,4 +2,11 @@
 
 <p><%= @document.summary %></p>
 <%= @document.digital.attached? %>
-<%= image_tag @document.digital, size: 100 %>
+<%# <%= image_tag @document.digital, size: 100 %>
+
+<ul>
+  <li><%= link_to "Destroy", document_path(@document), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
